@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Settings</title>
+<link rel="stylesheet" type="text/css" href="./src/game/style.css">
+<link rel="shortcut icon" href="./assets/favicon.ico">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="HandheldFriendly" content="True">
+<script>
+    //setup viewport so it behaves properly on mobile and desktop devices
+   //  var viewportTag = document.createElement('meta');
+//     viewportTag.id = "viewport";
+//     viewportTag.name = "viewport";
+//     viewportTag.content = "width = device-width, target-densitydpi=160dpi, initial-scale=" + (1/window.devicePixelRatio);
+//     document.getElementsByTagName('head')[0].appendChild(viewportTag);
+</script>
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, user-scalable=no">
+<meta charset="UTF-8">
+<script src="./lib/crafty.js"></script>
+<script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
+<script src="./src/game/jumpToGame.js"></script>
+<script src="./src/duck/environment.js"></script>
+<script src="./src/duck/game.js"></script>
+<script src="./src/duck/scenes.js"></script>
+<script src="./src/duck/components/scale.js"></script>
+<script src="./src/duck/components/mouse.js"></script>
+<script src="./src/duck/components/text.js"></script>
+<script src="./src/duck/components/button.js"></script>
+<script src="./src/duck/components/player.js"></script>
+<script src="./src/duck/components/duck.js"></script>
+<script src="./src/Whac/hole.js"></script>
+<script src="./src/Whac/env2.js"></script>
+<script src="./src/Whac/game2.js"></script>
+<script src="./src/Whac/scenes2.js"></script>
+<script src="./src/Whac/components/scale2.js"></script>
+<script src="./src/Whac/components/mouse2.js"></script>
+<script src="./src/Whac/components/text2.js"></script>
+<script src="./src/Whac/components/button2.js"></script>
+<script src="./src/Whac/components/player2.js"></script>
+<script src="./src/Whac/components/mice.js"></script>
+</head>
+<body>
+<h1>Settings</h1>
+<div id="settings">
+<table>
+<tr>
+<td>Game Mode:</td>
+<td>
+  <input type="radio" name="mode" value="DuckHunt" checked>DuckHunt 
+  <input type="radio" name="mode" value="Whac-A-Mole" >Whac-A-Mole
+</td>
+</tr>
+<tr>
+<td>Object Size:</td>
+<td>
+1<input type="range" id="objSize" min="1" max="100" value="40" onchange="updateRange(this.value);">10
+&nbsp;&nbsp; value=<label id="sizeValue"></label> 
+<script>
+var sizeRange=document.getElementById("objSize");
+var showSizeValue=document.getElementById("sizeValue");
+function updateRange(newValue)
+{
+	showSizeValue.innerHTML=newValue;
+}
+showSizeValue.innerHTML=sizeRange.value;
+</script>
+</td>
+</tr>
+
+<tr>
+<td>Resolution:</td>
+<td>
+<select id="resol">
+
+</select>
+</td>
+</tr>
+<tr>
+<td>Speed:</td>
+<td>
+1<input type="range" id="speed" min="1" max="10" value="4" onchange="updateSpeed(this.value);">10
+&nbsp;&nbsp; value=<label id="speedValue"></label> 
+<script>
+var speedRange=document.getElementById("speed");
+var showSpeedValue=document.getElementById("speedValue");
+function updateSpeed(newValue)
+{
+	showSpeedValue.innerHTML=newValue;
+}
+showSpeedValue.innerHTML=speedRange.value;
+</script>
+</td>
+</tr>
+<tr>
+  <td>
+    Choose Shapes:
+  </td>
+  <td>
+    <input id="Circle" name="shape" type="checkbox" value="Circle" checked>Circle
+    <input id="Square" name="shape" type="checkbox" value="Square">Square
+    <input id="Triangle" name="shape" type="checkbox" value="Triangle">Triangle
+  </td>
+</tr>
+<tr>
+<td>
+BackgroundColor:
+</td>
+<td>
+<input type="color" id="bgColor" value="#87CEEB">
+</td>
+</tr>
+<tr>
+<td>
+ObjectColor:
+</td>
+<td>
+<input type="color" id="objColor" value="#FFFF00">
+</td>
+</tr>
+</table>
+<button id="begin" class="gbutton">Begin</button>
+</div>
+<script type="text/javascript" src="./src/game/other.js"></script>
+</body>
+</html>
