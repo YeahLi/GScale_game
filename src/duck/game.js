@@ -28,14 +28,14 @@ Game={
 					//protrait
 					Env.x=resolWidth;
 		    		Env.y=resolHeight;
-		    		gameScreen.style.width=resolWidth;
-		    		gameScreen.style.height=resolHeight;
+		    		gameScreen.style.width=Env.x;
+		    		gameScreen.style.height=Env.y;
 				}else if (window.innerHeight <= window.innerWidth) {
 					//landscape
 					Env.x=resolHeight;
 		     		Env.y=resolWidth-15;
-		     		gameScreen.style.width=resolHeight;
-		    		gameScreen.style.height=resolWidth;
+		     		gameScreen.style.width=Env.x;
+		    		gameScreen.style.height=Env.y;
 				};
 				// Env.x=window.screen.availWidth;
 // 				Env.y=window.screen.availHeight;
