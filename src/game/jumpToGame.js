@@ -64,7 +64,10 @@ function jumptogame(){
 		}
 	
 		//Create game screen
-		document.writeln("<body><div id='cr-stage'></div></body>");
+		document.writeln("
+			<body>
+		    <div id='cr-stage'></div></body>
+		");
 		gameScreen=document.getElementById("cr-stage");
 
 	//enter into fullscreen

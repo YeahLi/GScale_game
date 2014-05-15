@@ -26,16 +26,12 @@ Game={
 				Env.calculateVariables();
 				if (window.innerHeight > window.innerWidth) {
 					//protrait
-					Env.x=resolWidth;
-		    		Env.y=resolHeight;
-		    		gameScreen.style.width=Env.x;
-		    		gameScreen.style.height=Env.y;
+					Env.x=320;
+		    		Env.y=548;
 				}else if (window.innerHeight <= window.innerWidth) {
 					//landscape
-					Env.x=resolHeight;
-		     		Env.y=resolWidth-15;
-		     		gameScreen.style.width=Env.x;
-		    		gameScreen.style.height=Env.y;
+					Env.x=548;
+		     		Env.y=320-12;
 				};
 				// Env.x=window.screen.availWidth;
 // 				Env.y=window.screen.availHeight;
