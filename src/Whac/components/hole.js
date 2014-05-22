@@ -36,11 +36,9 @@ Crafty.c('Hole_base',{
 		this.bind('ResizedWindow',this.onResize);
 	},
 	onResize:function(){
-		if (this.arr.length>0) {
-			for (var i = 0; i < arr.length; i++) {
-				this.arr[i].destroy();
-			};
-		};
+		this.destroyMe();
+		holeWidth=Env2.x*sizeValue*2.1/400;
+		holeHeight=Env2.y*sizeValue*1.05/400;
 		for (var i = 0; i < 3; i++) {
 			for (var j = 0; j < col; j++) {
 				var temp=Crafty.e('2D, Persist, Canvas, Scale2, spr_hole_base')
@@ -50,6 +48,14 @@ Crafty.c('Hole_base',{
 				this.arr.push(temp);
 			};
 		};
+	},
+	destroyMe:function(){
+		if (this.arr.length>0) {
+			for (var i = 0; i < arr.length; i++) {
+				this.arr[i].destroy();
+			};
+		};
+		this.destroy();
 	}
 });
 Crafty.c('Hole',{
@@ -59,13 +65,9 @@ Crafty.c('Hole',{
 		this.bind('ResizedWindow',this.onResize);
 	},
 	onResize:function(){
+		this.destroy
 		this.holeWidth=Env2.x*sizeValue*1.87/400;
 		this.holeHeight=Env2.y*sizeValue*0.84/400;
-		if (this.arr.length>0) {
-			for (var i = 0; i < arr.length; i++) {
-				this.arr[i].destroy();
-			};
-		};
 		for (var i = 0; i < 3; i++) {
 			for (var j = 0; j < col; j++) {
 				var temp=Crafty.e('2D, Persist, Canvas, Scale2, spr_hole')
@@ -75,5 +77,13 @@ Crafty.c('Hole',{
 				this.arr.push(temp);
 			};
 		};
+	},
+	destroyMe:function(){
+		if (this.arr.length>0) {
+			for (var i = 0; i < arr.length; i++) {
+				this.arr[i].destroy();
+			};
+		};
+		this.destroy();
 	}
 });
