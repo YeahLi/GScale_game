@@ -29,11 +29,11 @@ if(window.orientation === undefined){
 	//auto change with orientation status
 	//Assume mWidth is equal to the shortest side of mobile device
 	if(window.screen.availWidth<window.screen.availHeight){
-		var mWidth=availableWidth;
-		var mHeight=availableHeight;
+		var mWidth=window.screen.availWidth;
+		var mHeight=window.screen.availHeight;
 	}else{
-		var mWidth=availableHeight;
-		var mHeight=availableWidth;
+		var mWidth=window.screen.availHeight;
+		var mHeight=window.screen.availWidth;
 	}
 	var s=mWidth+"x"+mHeight;
 	moList.push(s);
