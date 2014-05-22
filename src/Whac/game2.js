@@ -24,7 +24,7 @@ Game2={
 	    		Env2.y=resolHeight;
 			}else if (window.innerHeight <= window.innerWidth) {
 				//landscape
-				Env2.x=resolHeight+25;
+				Env2.x=resolHeight+35;
 	     		Env2.y=resolWidth;
 			};
 			window.onresize = function(e) {
@@ -36,7 +36,7 @@ Game2={
 		    		Env2.y=resolHeight;
 				}else if (window.innerHeight <= window.innerWidth) {
 					//landscape
-					Env2.x=resolHeight+25;
+					Env2.x=resolHeight+35;
 		     		Env2.y=resolWidth;
 				};
 				holeMap();
