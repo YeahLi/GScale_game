@@ -49,7 +49,7 @@ Crafty.c('Button2', {
 	},
 	onMouseDown: function(e){
 		if(Env2.global.mobile){
-			var mouse = this.getGameCoords(e.x,e.y);
+			var mouse = this.getGameCoords(e.clientX,e.clientY);
 		}else{
 			var mouse = Crafty(Crafty('GameMouse2')[0]).getMousePos();
 		}

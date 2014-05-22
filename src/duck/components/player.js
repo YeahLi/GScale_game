@@ -119,7 +119,7 @@ Crafty.c('Player', {
 			//check if the game is using a mouse or a touchscreen	
 			if(Env.global.mobile){
 				//get game coordinates of the touch point
-				var mouse = this.getGameCoords(e.x,e.y);
+				var mouse = this.getGameCoords(e.clientX,e.clientY);
 			}else{
 				//get game coordinates of the crooshair on screen (NOT neccessarily where the mouse pointer is)
 				var mouse = Crafty(Crafty('GameMouse')[0]).getMousePos();

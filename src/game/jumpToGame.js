@@ -11,6 +11,7 @@ var objColorValue;
 var shapeNums=0;
 var arrShape=[];
 var gameScreen;
+var gameSettings=document.getElementById("settings");
 var settings = {
 	size:0,//px
 	resolution:"Null",
@@ -62,11 +63,24 @@ function jumptogame(){
 			alert("Must choose at least one shape!");
 			return true;
 		}
-	
+		
 		//Create game screen
-		document.writeln("<body><div id='cr-stage'></div></body>");
+		gameSettings.style.display="none";
 		gameScreen=document.getElementById("cr-stage");
 
+		enterFullscreen();
+    
+   //choose the mode to load
+	if(modeName=="DuckHunt"){
+		Game.start();
+	} else if(modeName=="Whac-A-Mole"){
+		Game2.start();
+	} else{
+		alert("Error!");
+		exitFullscreen();
+	}
+}
+function enterFullscreen(){
 	//enter into fullscreen
 	var docElm = document.documentElement;
     if (docElm.requestFullscreen) {
@@ -81,18 +95,7 @@ function jumptogame(){
     else if (docElm.webkitRequestFullScreen) {
         docElm.webkitRequestFullScreen();
     }
-    
-   //choose the mode to load
-	if(modeName=="DuckHunt"){
-		Game.start();
-	} else if(modeName=="Whac-A-Mole"){
-		Game2.start();
-	} else{
-		alert("Error!");
-		exitFullscreen();
-	}
 }
-
 function exitFullscreen() {
 	  if(document.exitFullscreen) {
 	    document.exitFullscreen();

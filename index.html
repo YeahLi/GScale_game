@@ -12,30 +12,11 @@
 <meta charset="UTF-8">
 <script src="./lib/crafty.js"></script>
 <script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
-<script src="./src/game/jumpToGame.js"></script>
-<script src="./src/duck/environment.js"></script>
-<script src="./src/duck/game.js"></script>
-<script src="./src/duck/scenes.js"></script>
-<script src="./src/duck/components/scale.js"></script>
-<script src="./src/duck/components/mouse.js"></script>
-<script src="./src/duck/components/text.js"></script>
-<script src="./src/duck/components/button.js"></script>
-<script src="./src/duck/components/player.js"></script>
-<script src="./src/duck/components/duck.js"></script>
-<script src="./src/Whac/hole.js"></script>
-<script src="./src/Whac/env2.js"></script>
-<script src="./src/Whac/game2.js"></script>
-<script src="./src/Whac/scenes2.js"></script>
-<script src="./src/Whac/components/scale2.js"></script>
-<script src="./src/Whac/components/mouse2.js"></script>
-<script src="./src/Whac/components/text2.js"></script>
-<script src="./src/Whac/components/button2.js"></script>
-<script src="./src/Whac/components/player2.js"></script>
-<script src="./src/Whac/components/mice.js"></script>
 </head>
 <body>
-<h1>Game Settings</h1>
+
 <div id="settings">
+<h1>Game Settings</h1>
 <table>
 <tr>
 <td>Game Mode:</td>
@@ -72,7 +53,7 @@ showSizeValue.innerHTML=sizeRange.value;
 <tr>
 <td>Speed:</td>
 <td>
-1<input type="range" id="speed" min="1" max="10" value="4" onchange="updateSpeed(this.value);">10
+1<input type="range" id="speed" min="1" max="10" value="4" onchange="updateSpeed(this.value);">100
 &nbsp;&nbsp; value=<label id="speedValue"></label> 
 <script>
 var speedRange=document.getElementById("speed");
@@ -114,6 +95,27 @@ ObjectColor:
 </table>
 <button id="begin" class="gbutton">Begin</button>
 </div>
-<script type="text/javascript" src="./src/game/other.js"></script>
+<div id="cr-stage"></div>
+<script src="./src/game/jumpToGame.js"></script>
+<script src="./src/duck/environment.js"></script>
+<script src="./src/duck/game.js"></script>
+<script src="./src/duck/scenes.js"></script>
+<script src="./src/duck/components/scale.js"></script>
+<script src="./src/duck/components/mouse.js"></script>
+<script src="./src/duck/components/text.js"></script>
+<script src="./src/duck/components/button.js"></script>
+<script src="./src/duck/components/player.js"></script>
+<script src="./src/duck/components/duck.js"></script>
+<script src="./src/Whac/hole.js"></script>
+<script src="./src/Whac/env2.js"></script>
+<script src="./src/Whac/game2.js"></script>
+<script src="./src/Whac/scenes2.js"></script>
+<script src="./src/Whac/components/scale2.js"></script>
+<script src="./src/Whac/components/mouse2.js"></script>
+<script src="./src/Whac/components/text2.js"></script>
+<script src="./src/Whac/components/button2.js"></script>
+<script src="./src/Whac/components/player2.js"></script>
+<script src="./src/Whac/components/mice.js"></script>
+<script src="./src/game/other.js"></script>
 </body>
 </html>

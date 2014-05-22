@@ -21,14 +21,14 @@ Crafty.c('GameMouse', {
 		if(this.newGame){
 			//set the crosshair cursor in the appropriate place given the mouse cursor position
 			this.newGame = false;
-			this.realMouseX = e.x;
-			this.realMouseY = e.y;
+			this.realMouseX = e.clientX;
+			this.realMouseY = e.clientY;
 			this.initPos(this.realMouseX, this.realMouseY);
 		}else{
 			//move the crosshair cursor appropriately given the movement in the mouse cursor
-			this.moveMe(e.x-this.realMouseX,e.y-this.realMouseY);
-			this.realMouseX = e.x;
-			this.realMouseY = e.y;
+			this.moveMe(e.clientX-this.realMouseX,e.clientY-this.realMouseY);
+			this.realMouseX = e.clientX;
+			this.realMouseY = e.clientY;
 		}
 	},
 	moveMe: function(dx,dy){
