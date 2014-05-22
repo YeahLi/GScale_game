@@ -43,3 +43,15 @@ Crafty.c('Scale2', {
 		return Env2.layers[this.zLayer];
 	}
 });
+//SpriteScale 
+//A sprite component which includes the Scale component 
+Crafty.c('SpriteScale', {
+	init: function(){
+		this.spriteName = 'spr_mice';
+		this.requires('2D, Canvas, Scale2, ' + this.spriteName);
+	},
+	setSprite: function(name){
+		this.spriteName = name;
+		this.requires(this.spriteName);
+	}
+});

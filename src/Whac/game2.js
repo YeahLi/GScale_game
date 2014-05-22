@@ -16,10 +16,17 @@ Game2={
 		}
 		Env2.global.pixelRatio = window.devicePixelRatio;
 		Env2.calculateVariables();
-        //make the map
-        holeMap(resolWidth,resolHeight);
 		//start Crafty
 		if(Env2.global.mobile){
+			if (window.innerHeight > window.innerWidth) {
+				//protrait
+				Env2.x=resolWidth;
+	    		Env2.y=resolHeight;
+			}else if (window.innerHeight <= window.innerWidth) {
+				//landscape
+				Env2.x=resolHeight+15;
+	     		Env2.y=resolWidth;
+			};
 			window.onresize = function(e) {
 				//console.log("window changed");
 				Env2.calculateVariables();
@@ -29,10 +36,10 @@ Game2={
 		    		Env2.y=resolHeight;
 				}else if (window.innerHeight <= window.innerWidth) {
 					//landscape
-					Env2.x=resolHeight;
-		     		Env2.y=resolWidth-15;
+					Env2.x=resolHeight+15;
+		     		Env2.y=resolWidth;
 				};
-				holeMap(Env2.x,Env2.y);
+				holeMap();
 				Crafty.trigger('ResizedWindow');				
 			}
 			Crafty.init(Env2.x,Env2.y,gameScreen);
@@ -45,6 +52,8 @@ Game2={
 			gameScreen.style.bottom=0;
 			gameScreen.style.right=0;			
 	    }
+	    //make the map
+        holeMap();
 	    document.body.style.background = "black";
 		document.body.style.margin=0;
 		document.body.style.padding=0;

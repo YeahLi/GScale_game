@@ -70,8 +70,11 @@ Env2 = {
   //layer management 
   //allows you to quickly change the layer of things
   layers: {
-    mices:0,
-    default_layer: 1,
+    background:0,
+    hole:1,
+    mices:2,
+    hole_base:3,
+    default_layer: 4,
     button:7,
     text:8,
     crosshair:10,//pointer

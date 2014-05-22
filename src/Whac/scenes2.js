@@ -21,14 +21,29 @@ Crafty.scene('Loading2',
 		});
 		//Load assets
 		Crafty.load(
-			['assets/crosshair.png'
+			['assets/crosshair.png',
+			 'assets/bg.png',
+			 'assets/board.png',
+			 'assets/GameOver.png',
+			 'assets/hole_base.png',
+			 'assets/hole.png',
+			 'assets/mice.png',
+			 'assets/reload.mp3',
+			 'assets/shoot.mp3'
 			], function onLoad(){
 				//assets loaded
 				//create sprite components from image files
 				Crafty.sprite(64, 64, 'assets/crosshair.png', {
 				  	spr_crosshair: [0,0]//define spr_crosshair entity used in mouse.js
 			    });
-			    
+			    Crafty.sprite('assets/bg.png', {spr_background:[0,0,978,736]});
+			    Crafty.sprite('assets/board.png', {spr_board:[0,0,790,480]});
+			    Crafty.sprite('assets/GameOver.png', {spr_gameover:[0,0,385,88]});
+			    Crafty.sprite('assets/hole_base.png', {spr_hole_base:[0,0,210,69]});
+			    Crafty.sprite('assets/hole.png', {spr_hole:[0,0,187,56]});
+			    Crafty.sprite(202, 220, 'assets/mice.png', {
+				  	spr_mice: [0,0]
+			    });
 				//setup audio from files
 				Crafty.audio.add("shoot", "assets/shoot.mp3");
 				Crafty.audio.add("reload", "assets/reload.mp3");
@@ -37,6 +52,10 @@ Crafty.scene('Loading2',
 					//crosshair cursor 
 					Crafty.e('GameMouse2');
 				}
+				//background
+				Crafty.e('Background');
+				Crafty.e('Hole_base');
+				Crafty.e('Hole');
 				//go to the start menu scene
 				Crafty.scene('StartMenu2');
 				Crafty.trigger('SceneChange',{});
