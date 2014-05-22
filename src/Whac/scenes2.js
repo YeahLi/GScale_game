@@ -54,6 +54,8 @@ Crafty.scene('Loading2',
 				}
 				//background
 				Crafty.e('Background');
+				//make the map
+        		holeMap();
 				Crafty.e('Hole_base');
 				Crafty.e('Hole');
 				//go to the start menu scene
