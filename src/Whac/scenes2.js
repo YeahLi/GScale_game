@@ -33,7 +33,7 @@ Crafty.scene('Loading2',
 			], function onLoad(){
 				//assets loaded
 				//create sprite components from image files
-				Crafty.sprite(64, 64, 'assets/crosshair.png', {
+				Crafty.sprite(327, 257, 'assets/hammer.png', {
 				  	spr_crosshair: [0,0]//define spr_crosshair entity used in mouse.js
 			    });
 			    Crafty.sprite('assets/bg.png', {spr_background:[0,0,978,736]});

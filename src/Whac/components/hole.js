@@ -10,8 +10,8 @@ var holeWidth;
 var holeHeight;
 function holeMap(){
 	var width=Env2.x*0.815;
-	holeWidth=Env2.x*sizeValue*2.1/400;
-	holeHeight=Env2.y*sizeValue*1.05/400;
+	holeWidth=Env2.x*40*2.1/400;
+	holeHeight=Env2.y*40*1.05/400;
 	var internal=holeWidth*0.25;
 	var internalHeight=Env2.y*0.246;
 	col = Math.floor((width+internal)/(holeWidth+internal));
@@ -37,8 +37,8 @@ Crafty.c('Hole_base',{
 	},
 	onResize:function(){
 		this.destroyMe();
-		holeWidth=Env2.x*sizeValue*2.1/400;
-		holeHeight=Env2.y*sizeValue*1.05/400;
+		holeWidth=Env2.x*40*2.1/400;
+		holeHeight=Env2.y*40*1.05/400;
 		for (var i = 0; i < 3; i++) {
 			for (var j = 0; j < col; j++) {
 				var temp=Crafty.e('2D, Persist, Canvas, Scale2, spr_hole_base')
@@ -65,8 +65,8 @@ Crafty.c('Hole',{
 	},
 	onResize:function(){
 		this.destroyMe();
-		this.holeWidth=Env2.x*sizeValue*1.87/400;
-		this.holeHeight=Env2.y*sizeValue*0.84/400;
+		this.holeWidth=Env2.x*40*1.87/400;
+		this.holeHeight=Env2.y*40*0.84/400;
 		for (var i = 0; i < 3; i++) {
 			for (var j = 0; j < col; j++) {
 				var temp=Crafty.e('2D, Persist, Canvas, Scale2, spr_hole')

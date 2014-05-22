@@ -1,17 +1,25 @@
 Crafty.c('GameMouse2', {
 	init: function(){
-		this.requires('2D, Canvas, Scale2, spr_crosshair, Persist');
+		this.requires('2D, Canvas, Scale2, spr_crosshair, Persist, Tween');
 		Crafty.addEvent(this,Crafty.stage.elem, "mousemove", this.onMouseMove);
+		Crafty.addEvent(this,Crafty.stage.elem, "mousedown", this.onMouseDown);
+		Crafty.addEvent(this,Crafty.stage.elem, "mouseup", this.onMouseUp);
 		this.bind('ResizedWindow',this.resizeMe);
 		//remove the actual mouse cursor
 		//document.body.style.cursor = "none"; //cursor="crosshair"
-		gameScreen.style.cursor = "none";
+		//gameScreen.style.cursor = "none";
 		this.setLayer('crosshair');
 		this.newGame = true;
-		this.realMouseX = Env2.x/2-32;
-		this.realMouseY = Env2.y/2-32;
-		this.x=Env2.x/2-32;
-		this.y=Env2.y/2-32;
+		this.resizeMe();
+		//sprite rotation point
+		this.origin('bottom right');
+		this.rotation=30;
+	},
+	onMouseDown: function(e){
+		this.tween({rotation:0},5);
+	},
+	onMouseUp: function(e){
+		this.tween({rotation:30},5);
 	},
 	onMouseMove: function(e){
 		if(this.newGame){
@@ -30,7 +38,7 @@ Crafty.c('GameMouse2', {
 	moveMe: function(dx,dy){
 		//adjust the crosshair given the movement in the mouse position
 		var pos = this.getPos();
-		var pos = {x:pos.x +32,y:pos.y+32};
+		var pos = {x:pos.x +this.mouseWidth/4,y:pos.y+this.mouseHeight/1.5};
 		var newPos = {x: pos.x+dx,y: pos.y+dy};
 		if(newPos.x > Env2.x){
 			//passes outside the game to the right
@@ -46,7 +54,7 @@ Crafty.c('GameMouse2', {
 			//passed outside the top of the game
 			newPos.y = 0;
 		}
-		this.setPos(newPos.x-32,newPos.y-32);
+		this.setPos(newPos.x-this.mouseWidth/4,newPos.y-this.mouseHeight/1.5);
 	},
 	initPos: function(x,y){
 		//figure out where the crosshair cursor should start given the mouse cursor position
@@ -69,14 +77,21 @@ Crafty.c('GameMouse2', {
 		}else{
 			y = y-minY;
 		}
-		this.attr({x:x-32,y:y-32});//picture left top location
+		this.attr({x:x-this.mouseWidth/4,y:y-this.mouseHeight/1.5});//picture left top location
 	},
 	getMousePos: function(){
 		//returns the mouse position in game coordinates
 		var pos = this.getPos();
-		return({x:pos.x+32,y:pos.y+32});//real pointer center location
+		return({x:pos.x+this.mouseWidth/4,y:pos.y+this.mouseHeight/1.5});//real pointer center location
 	},
 	resizeMe: function(){
+		this.mouseWidth=Env2.x*3.27/15;
+		this.mouseHeight=Env2.y*2.57/15;
+		this.attr({w:this.mouseWidth,h:this.mouseHeight});
+		this.realMouseX = Env2.x/2-this.mouseWidth/4;
+		this.realMouseY = Env2.y/2-this.mouseHeight/1.5;
+		this.x=Env2.x/2-this.mouseWidth/4;
+		this.y=Env2.y/2-this.mouseHeight/1.5;
 		//reset the crosshair position so it will continue working properly
 		//the crosshair might not stay in the exact same place during a resize
 		this.initPos(this.realMouseX,this.realMouseY);

@@ -142,7 +142,7 @@ Game2={
 					var myDate = new Date();
 					miceAppearTime = myDate.getTime();
 					//draw mice!!!!
-					Crafty.e(miceTypes[type]).activate();					
+					Crafty.e("NormalMice").activate();					
 					d++;	
 				}else{
 					clearInterval(redo);
