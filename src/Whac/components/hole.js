@@ -36,7 +36,7 @@ Crafty.c('Hole_base',{
 		this.bind('ResizedWindow',this.onResize);
 	},
 	onResize:function(){
-		alert("resize");
+		//alert("resize");
 		this.destroyMe();
 		holeWidth=Env2.x*sizeValue*2.1/400;
 		holeHeight=Env2.y*sizeValue*1.05/400;
