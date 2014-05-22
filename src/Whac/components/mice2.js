@@ -119,6 +119,6 @@ Crafty.c("NormalMice", {
 	onResize: function(){
 		//correct duck variables based on new screen conditions
 		this.destroyMe();
-		this.activate();
+		Crafty.e('NormalMice').activate();
 	}
 });
