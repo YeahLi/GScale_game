@@ -51,11 +51,10 @@ Crafty.c('Hole_base',{
 	},
 	destroyMe: function(){
 		if (this.arr.length>0) {
-			for (var i = 0; i < arr.length; i++) {
+			for (var i = 0; i < this.arr.length; i++) {
 				this.arr[i].destroy();
 			};
 		};
-		this.destroy();
 	}
 });
 Crafty.c('Hole',{
@@ -80,10 +79,9 @@ Crafty.c('Hole',{
 	},
 	destroyMe: function(){
 		if (this.arr.length>0) {
-			for (var i = 0; i < arr.length; i++) {
+			for (var i = 0; i < this.arr.length; i++) {
 				this.arr[i].destroy();
 			};
 		};
-		this.destroy();
 	}
 });
