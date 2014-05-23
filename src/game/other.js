@@ -1,6 +1,6 @@
 var button=document.getElementById("begin");
 button.addEventListener("click", jumptogame, false);
-var pcList=["800x600","1024x768","1280x800","1440x900"];
+var pcList=["800x600","1024x768","1280x800","1440x900","1920x1080","2560x1600"];
 var moList=[];
 var trs=document.getElementsByTagName('tr');
 for(var i=0;i<trs.length;i++){
