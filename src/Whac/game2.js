@@ -147,7 +147,7 @@ Game2={
 				}else{
 					clearInterval(redo);
 				}
-			},Env2.appearSpeed );//mice appear speed Math.floor(5000/Env2.speed);
+			},Env2.appearSpeed-(Game2.level-1)*200-Game2.wave*70);//mice appear speed Math.floor(5000/Env2.speed);
 			Game2.wave++;
 		}else{
 			Game2.wave=0;

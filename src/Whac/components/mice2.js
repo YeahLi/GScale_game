@@ -108,7 +108,7 @@ Crafty.c("NormalMice", {
 		this.requires('Mice');
 		//rewrite the miceName
 		this.miceName="NormalMice";
-		this.speed = Env2.disappearSpeed;
+		this.speed = Env2.disappearSpeed-(Game2.level-1)*210-Game2.wave*70;
 		this.worth = Env2.worth;
 		//hits to kill the mice
 		this.health = 1;

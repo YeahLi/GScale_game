@@ -28,6 +28,9 @@ Crafty.scene('Loading2',
 			 'assets/hole_base.png',
 			 'assets/hole.png',
 			 'assets/mice.png',
+			 'assets/play.png',
+			 'assets/repeat.png',
+			 'assets/quit.png',
 			 'assets/reload.mp3',
 			 'assets/shoot.mp3'
 			], function onLoad(){
@@ -41,6 +44,9 @@ Crafty.scene('Loading2',
 			    Crafty.sprite('assets/GameOver.png', {spr_gameover:[0,0,385,88]});
 			    Crafty.sprite('assets/hole_base.png', {spr_hole_base:[0,0,210,69]});
 			    Crafty.sprite('assets/hole.png', {spr_hole:[0,0,187,56]});
+			    Crafty.sprite('assets/play.png', {spr_play:[0,0,128,128]});
+				Crafty.sprite('assets/repeat.png', {spr_repeat:[0,0,128,128]});
+				Crafty.sprite('assets/quit.png', {spr_quit:[0,0,128,128]});
 			    Crafty.sprite(202, 220, 'assets/mice.png', {
 				  	spr_mice: [0,0]
 			    });
@@ -97,6 +103,7 @@ Crafty.scene('Level2',
 );
 Crafty.scene('LevelCompleted2',
 	function(){ 
+		Crafty.e('Board');
 		//create level complete screen (displays level scores)
 		Crafty.e('LevelCompleteText2');
 		for(var i=0; i<(Game2.playerScore.length); i++){	
@@ -108,6 +115,7 @@ Crafty.scene('LevelCompleted2',
 		}, 1500 );
 	},
 	function(){
+		Crafty(Crafty('Board')[0]).destroyMe();
 		//destroy level complete screen
 		Crafty(Crafty('LevelCompleteText2')[0]).destroyMe();
 		var levels = Crafty('LevelScoreText2');

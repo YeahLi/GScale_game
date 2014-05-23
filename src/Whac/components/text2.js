@@ -29,7 +29,7 @@ Crafty.c('CanvasText2',{
 		this.text = Crafty.e('2D, Canvas, Text, Scale2');
 
 		this.text.text(data.text);
-		this.text.textColor('#FFFFFF',1);
+		this.text.textColor(data.color,1);//FFFFFF
 		this.text.textFont({family: 'Arial', size: data.fontSize+'px'});
 		this.text.setLayer(this.layer);
 
@@ -54,7 +54,7 @@ Crafty.c('CanvasText2',{
 			data.y -= this.h;
 		}
 		this.text.setPos(data.x,data.y);
-		this.text.attr({w:this.w,h:this.h});//,h:this.h});
+		this.text.attr({w:this.w,h:this.h});
 	},
 	destroyMe: function(){
 		this.text.destroy();
@@ -72,6 +72,7 @@ Crafty.c('LoadingText2', {
 			x: Env2.x/2,
 			y: Env2.y/2,
 			text: '..loading..',
+			color: '#FFFFFF',
 			fontSize: 2*Env2.textSize,
 			alignment: {x:'center',y:'center'} 
 		}
@@ -88,12 +89,12 @@ Crafty.c('Whac-A-MoleText', {
 		var textInfo = {
 			x: Env2.x/2,
 			y: Env2.y/2-25-(2.5*Env2.textSize),
-			text: 'Whac-A-MoleText',
-			fontSize: 1.5*Env2.textSize,
+			text: 'Whac-A-Mole',
+			color: '#FFFFFF',
+			fontSize: 2*Env2.textSize,
 			alignment: {x:'center',y:'top'} 
 		}
 		this.update(textInfo);
-		//console.log("Whac-A-MoleText.onResize");
 	}
 });
 //
@@ -104,9 +105,10 @@ Crafty.c('LevelCompleteText2', {
 	onResize: function(){
 		var textInfo = {
 			x: Env2.x/2,
-			y: (Env2.textSize*10)-200,
+			y: (Env2.textSize*10)-145,
 			text: 'LevelComplete',
-			fontSize: 1.5*Env2.textSize,
+			color: '#0033CC',
+			fontSize: 1.25*Env2.textSize,
 			alignment: {x:'center',y:'top'} 
 		}
 		this.update(textInfo);
@@ -125,8 +127,9 @@ Crafty.c('LevelScoreText2', {
 		var score = Game2.playerScore;
 		var textInfo = {
 			x: Env2.x/2,
-			y: (Env2.textSize*10)-200 + (2*Env2.textSize) + (this.level*1.25*Env2.textSize),
+			y: (Env2.textSize*10)-145 + (2*Env2.textSize) + (this.level*1.25*Env2.textSize),
 			text: "Level " + (this.level+1) + ": " + score[this.level],
+			color: '#0033CC',
 			fontSize: Env2.textSize,
 			alignment: {x:'center',y:'top'} 
 		}
@@ -136,16 +139,16 @@ Crafty.c('LevelScoreText2', {
 //
 Crafty.c('GameOverText2', {
 	init: function(){
-		this.requires('CanvasText2');
+		this.requires('2D, Persist, Canvas, Scale2, spr_gameover');
+		this.setLayer('text');
+		this.onResize();
+		this.bind('ResizedWindow',this.onResize);
 	},
 	onResize: function(){
-		var textInfo = {
-			x: Env2.x/2,
-			y: Env2.y/2-128,
-			text: 'Game Over!',
-			fontSize: 1.5*Env2.textSize,
-			alignment: {x:'center',y:'top'} 
-		}
-		this.update(textInfo);
+		this.attr({w:385/3+0.385*Env2.x/1.2,h:88/3+0.088*Env2.y/1.2});
+		this.setPos(Env2.x/2-this.w/2,Env2.y/2-this.h*2);
+	},
+	destroyMe: function(){
+		this.destroy();
 	}
 });

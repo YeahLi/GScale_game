@@ -50,9 +50,9 @@ Env2 = {
   //level 5: spawns 7 yellow or green mices per wave
   //level 6: spawns 8 yellow or green or red mices per wave
   numWaves: 3,            //number of mice waves per level
-  numLevels: 1,           //number of levels per game
+  numLevels: 3,           //number of levels per game
   numMices: 3,            //initial number of mices per wave of mices
-  numMicesIncrement: 0,   //number of additional mices per wave after each cycle of mice types
+  numMicesIncrement: 2,   //number of additional mices per wave after each cycle of mice types
   minNumMiceTypes: 1,     //minimum number of mice types to choose from
   maxNumMiceTypes: 3,     //maximum number of mice types to choose from
   //makes game repeatably random
@@ -96,8 +96,8 @@ Env2 = {
     
     //mice
     Env2.speed=speedValue;
-    Env2.appearSpeed=Math.floor(5000/Env2.speed);
-    Env2.disappearSpeed=Env2.appearSpeed*1.5;
+    Env2.appearSpeed=Math.floor(4500/Env2.speed);
+    Env2.disappearSpeed=Env2.appearSpeed*1.15;
     Env2.miceWidth = sizeValue;
     Env2.miceHeight = sizeValue;
     //player
