@@ -39,7 +39,7 @@ Crafty.c('StartGameButton2', {
 		this.setPos(Env2.x/2-this.w/2,Env2.y/2-this.h/4);	
 	},
 	onClick: function(){
-		gameScreen.style.cursor = "none";
+		//gameScreen.style.cursor = "none";
 		//change scene to first level
 		Crafty.scene('Level2');
 		Crafty.trigger('SceneChange',{});
@@ -47,7 +47,7 @@ Crafty.c('StartGameButton2', {
 });
 Crafty.c('RestartGameButton2', {
 	init: function(){
-		gameScreen.style.cursor = "default";
+		//gameScreen.style.cursor = "default";
 		this.requires('Button2, spr_repeat');
 		this.onResize();
 		this.bind('ResizedWindow',this.onResize);
@@ -58,7 +58,7 @@ Crafty.c('RestartGameButton2', {
 		this.setPos(Env2.x/2-this.w*1.5,Env2.y/2-this.h/2);	
 	},
 	onClick: function(){
-		gameScreen.style.cursor = "none";
+		//gameScreen.style.cursor = "none";
 		//change scene to first level
 		Crafty.scene('Level2');
 		Crafty.trigger('SceneChange',{});

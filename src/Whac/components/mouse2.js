@@ -6,8 +6,8 @@ Crafty.c('GameMouse2', {
 		Crafty.addEvent(this,Crafty.stage.elem, "mouseup", this.onMouseUp);
 		this.bind('ResizedWindow',this.resizeMe);
 		//remove the actual mouse cursor
-		//document.body.style.cursor = "none"; //cursor="crosshair"
-		//gameScreen.style.cursor = "none";
+		//document.body.style.cursor = "url(./assets/play.png)"; //cursor="crosshair"
+		gameScreen.style.cursor = "url(./assets/crosshair.png) 32 32,auto";
 		this.setLayer('crosshair');
 		this.newGame = true;
 		this.resizeMe();

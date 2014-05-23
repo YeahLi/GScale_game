@@ -48,6 +48,8 @@ if(window.orientation === undefined){
 		resol.appendChild(op);
 	}
 }
+//document.body.style.cursor = "url('./assets/play.png'), pointer";
+//alert(document.body.style.cursor);
 //window.screen.availWidth
 //window.innerWidth
 //window.screen.width
