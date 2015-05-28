@@ -71,7 +71,7 @@ Crafty.c('LoadingText', {
 		var textInfo = {
 			x: Env.x/2,
 			y: Env.y/2,
-			text: '..loading..',
+			text: '..loading..@Ye Li',
 			fontSize: 2*Env.textSize,
 			alignment: {x:'center',y:'center'} 
 		}
@@ -105,7 +105,7 @@ Crafty.c('LevelCompleteText', {
 		var textInfo = {
 			x: Env.x/2,
 			y: (Env.textSize*10)-200,
-			text: 'LevelComplete',
+			text: 'LevelComplete @Ye Li',
 			fontSize: 1.5*Env.textSize,
 			alignment: {x:'center',y:'top'} 
 		}
@@ -126,7 +126,7 @@ Crafty.c('LevelScoreText', {
 		var textInfo = {
 			x: Env.x/2,
 			y: (Env.textSize*10)-200 + (2*Env.textSize) + (this.level*1.25*Env.textSize),
-			text: "Level " + (this.level+1) + ": " + score[this.level],
+			text: "Level " + (this.level+1) + ": " + score[this.level]+'Ye Li',
 			fontSize: Env.textSize,
 			alignment: {x:'center',y:'top'} 
 		}
@@ -142,7 +142,7 @@ Crafty.c('GameOverText', {
 		var textInfo = {
 			x: Env.x/2,
 			y: Env.y/2-128,
-			text: 'Game Over!',
+			text: 'Game Over! @Ye Li',
 			fontSize: 1.5*Env.textSize,
 			alignment: {x:'center',y:'top'} 
 		}

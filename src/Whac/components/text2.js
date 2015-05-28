@@ -71,7 +71,7 @@ Crafty.c('LoadingText2', {
 		var textInfo = {
 			x: Env2.x/2,
 			y: Env2.y/2,
-			text: '..loading..',
+			text: '..loading.. @Ye Li',
 			color: '#FFFFFF',
 			fontSize: 2*Env2.textSize,
 			alignment: {x:'center',y:'center'} 
@@ -89,7 +89,7 @@ Crafty.c('Whac-A-MoleText', {
 		var textInfo = {
 			x: Env2.x/2,
 			y: Env2.y/2-25-(2.5*Env2.textSize),
-			text: 'Whac-A-Mole',
+			text: 'Whac-A-Mole @Ye Li',
 			color: '#FFFFFF',
 			fontSize: 2*Env2.textSize,
 			alignment: {x:'center',y:'top'} 
@@ -106,7 +106,7 @@ Crafty.c('LevelCompleteText2', {
 		var textInfo = {
 			x: Env2.x/2,
 			y: (Env2.textSize*10)-145,
-			text: 'LevelComplete',
+			text: 'LevelComplete @Ye Li',
 			color: '#0033CC',
 			fontSize: 1.25*Env2.textSize,
 			alignment: {x:'center',y:'top'} 
@@ -128,7 +128,7 @@ Crafty.c('LevelScoreText2', {
 		var textInfo = {
 			x: Env2.x/2,
 			y: (Env2.textSize*10)-145 + (2*Env2.textSize) + (this.level*1.25*Env2.textSize),
-			text: "Level " + (this.level+1) + ": " + score[this.level],
+			text: "Level " + (this.level+1) + ": " + score[this.level]+"@Ye Li",
 			color: '#0033CC',
 			fontSize: Env2.textSize,
 			alignment: {x:'center',y:'top'} 
